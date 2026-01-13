@@ -1,4 +1,4 @@
-- name: PING
+- name: PING    #to excute the module in ansible server: ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 1-playbook.yml
   hosts: 172.31.27.253
   tasks: # task=module=collection
   - name: ping the server
