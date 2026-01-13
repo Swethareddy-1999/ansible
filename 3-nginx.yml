@@ -1,5 +1,5 @@
 - name: install and run nginx  #mmost importent in interviews
-  hosts: web
+  hosts: 172.31.27.253
   become: yes # -b
   tasks:
   - name: install nginx
@@ -11,4 +11,3 @@
       name: nginx
       state: started
       enabled: yes
-              
