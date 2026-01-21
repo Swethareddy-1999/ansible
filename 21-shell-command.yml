@@ -1,0 +1,17 @@
+- name: shell vs Command
+  hosts: local
+  connection: local
+  tasks:
+  - name: execute ls command
+    #ansible.builtin.command: ls -ltr > /tmp/output.txt #we used directers(>) here so we have to use shell module
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt
+
+  - name: execute ls command in command module
+    #ansible.builtin.command: ls -ltr > /tmp/output.txt
+    #ansible.builtin.command: ls -ltr # we will get o/p
+    ansible.builtin.command: lsss -ltrssfff # it will give an error
+    register: command_result  # by using register keyword we can store the output of commands
+
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ command_result }}"
